@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    overflow-y: auto; 
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#delete-button{
+    background-color: tomato;
+}
+
+.btn {
+    padding: 8px 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+}
+.btn:hover {
+    background-color: #45a049;
+}
+.add-btn {
+    margin-bottom: 20px;
+}
+/* Popup styles */
+.popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: -0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
+}
+.popup-content {
+    background-color: #fefefe;
+    margin: 10% auto; 
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    overflow-y: auto;
+    max-height: 80%;
+    width: 80%; 
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+.form-group span {
+    bottom: -20px;
+    color: red;
+    font-size: 14px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.form-group input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.form-group input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .popup-content {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+}
