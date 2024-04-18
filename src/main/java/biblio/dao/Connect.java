@@ -6,22 +6,33 @@ import java.sql.SQLException;
 
 public class Connect {
 
-    public static void main(String[] args) {
-        Connection con = null;
-        try {
-            Class.forName("org.postgresql.Driver");
-            con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/GestionBiblio", "postgres", "admin");
-            System.out.println("Connexion établie avec succès.");
-        } catch (ClassNotFoundException | SQLException e) {
-            System.out.println("Erreur lors de la connexion : " + e.getMessage());
-        } finally {
-            try {
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                System.out.println("Erreur lors de la fermeture de la connexion : " + e.getMessage());
-            }
-        }
-    }
+	private static Connection connection;
+	
+	static {
+		String url="jdbc:postgresql://localhost:5432/GestionBiblio";
+		String username="postgres";
+		String password="admin";
+		
+		try {
+			Class.forName("org.postgresql.Driver");
+			
+			connection =DriverManager.getConnection(url,username,password);
+			
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		
+		
+	}
+		
+	
 }
+	
+	public static Connection getConnection(){
+	
+		return connection;
+	}
+}
+	
+
