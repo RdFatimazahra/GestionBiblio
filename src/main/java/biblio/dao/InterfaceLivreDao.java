@@ -7,6 +7,7 @@ import biblio.metier.Livre;
 public interface InterfaceLivreDao {
 
 	Livre save(Livre livre);
+	public  List<Livre> getTousLivres();
 
 	
 	
