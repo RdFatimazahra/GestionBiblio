@@ -26,6 +26,18 @@ public class Livre {
 		this.datePub = datePub;
 	}
 
+	
+	
+
+	public int getIdLivre() {
+		return IdLivre;
+	}
+
+
+	public void setIdLivre(int idLivre) {
+		IdLivre = idLivre;
+	}
+
 
 	public String getTitre() {
 		return titre;
