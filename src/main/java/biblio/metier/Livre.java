@@ -1,6 +1,5 @@
 package biblio.metier;
 
-import java.util.Date; // Importer classe date
 
 
 
@@ -10,7 +9,7 @@ public class Livre {
 	private String titre;
 	private String auteur;
 	private String edition;
-	private Date datePub;
+	private String datePub;
 	
 	
 	public Livre() {
@@ -18,7 +17,7 @@ public class Livre {
 	}
 
 
-	public Livre(String titre, String auteur, String edition, Date datePub) {
+	public Livre(String titre, String auteur, String edition, String datePub) {
 		super();
 		this.titre = titre;
 		this.auteur = auteur;
@@ -69,12 +68,12 @@ public class Livre {
 	}
 
 
-	public Date getDatePub() {
+	public String getDatePub() {
 		return datePub;
 	}
 
 
-	public void setDatePub(Date datePub) {
+	public void setDatePub(String datePub) {
 		this.datePub = datePub;
 	}
 
