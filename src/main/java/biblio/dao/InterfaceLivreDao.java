@@ -8,7 +8,7 @@ public interface InterfaceLivreDao {
 
 	Livre save(Livre livre);
 	public  List<Livre> getTousLivres();
-
+	public void deleteLivre(int id);
 	
 	
 	

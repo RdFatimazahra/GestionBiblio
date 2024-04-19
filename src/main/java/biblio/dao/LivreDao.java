@@ -21,12 +21,12 @@ public class LivreDao implements InterfaceLivreDao {
         ResultSet rs = null;
         
         try {
-            String query = "INSERT INTO books(title, writer, edition, pupDate) VALUES (?, ?, ?, ?)";
+            String query = "INSERT INTO books(title, writer, edition, pubDate) VALUES (?, ?, ?, ?)";
             ps = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, livre.getTitre());
             ps.setString(2, livre.getAuteur());
             ps.setString(3, livre.getEdition());
-            ps.setDate(4, new java.sql.Date(livre.getDatePub().getTime()));
+            ps.setString(4, livre.getDatePub());
             
             int rowsAffected = ps.executeUpdate();
             
@@ -57,29 +57,51 @@ public class LivreDao implements InterfaceLivreDao {
     
    //Fonction Afficher tous les livres
     
-	@Override
-	public  List<Livre> getTousLivres() {
-	
-		List<Livre> livres=new ArrayList<>();
+    public List<Livre> getTousLivres() {
+        List<Livre> livres = new ArrayList<>();
         Connection con = Connect.getConnection();
+        
+        try {
+            PreparedStatement ps = con.prepareStatement("SELECT * FROM books");
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()) {
+                Livre livre = new Livre();
+                livre.setIdLivre(rs.getInt("idbook"));
+                livre.setTitre(rs.getString("title"));
+                livre.setAuteur(rs.getString("writer"));
+                livre.setEdition(rs.getString("edition"));
+                livre.setDatePub(rs.getString("pubDate"));
+                livres.add(livre);
+            }
+            
+            rs.close();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Gérer l'erreur de base de données
+        }
+        
+        return livres;
+    }
+
+
+//Fonction  Supprimer livre
+    
+ @Override
+public void deleteLivre(int id) {
 	
-		try {
-			PreparedStatement ps=con.prepareStatement("SELECT* FROM books");
-			 
-			ResultSet rs=ps.executeQuery();
-			while(rs.next()) {
-				Livre livre=new Livre();
-				livre.setIdLivre(rs.getInt("idbook"));
-				livre.setTitre(rs.getString("title"));
-				livre.setAuteur(rs.getString("writer"));
-				livre.setEdition(rs.getString("edition"));
-				livre.setDatePub(rs.getDate("pupDate"));
-				livres.add(livre);
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return livres;
+	Connection con= Connect.getConnection();
+	try {
+		PreparedStatement ps=con.prepareStatement("DELETE FROM books WHERE idbook=?");
+	    ps.setInt(1, id); 
+	    ps.executeUpdate();
+	    ps.close();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
 	}
-}
+	
+
+	
+}}
