@@ -6,28 +6,47 @@ import java.util.List;
 import biblio.metier.Livre;
 
 public class Test {
-  
-		    public static void main(String[] args) {
-		    	Connection con=Connect.getConnection();
 
-	        LivreDao livreDao = new LivreDao();
-	        
-		        // Exécution de la méthode getTousLivres()
-		        List<Livre> livres = livreDao.getTousLivres();
+	public static void main(String[] args) {
+		    	/*
+		    	  // Création d'une instance de Bibliothèque
+		        Bibliothèque bibliothèque = new Bibliothèque();
 		        
-		        // Vérification si des livres ont été récupérés
-		        if (!livres.isEmpty()) {
-		            // Affichage des livres récupérés
-	            System.out.println("Livres récupérés depuis la base de données :");
-		            for (Livre livre : livres) {
-		                System.out.println(livre);
-		            }
-		        } else {
-		            System.out.println("Aucun livre récupéré depuis la base de données.");
-		    }
+		        // Identifiant du livre à supprimer (changez-le selon vos besoins)
+		        int idLivreASupprimer = 123;
 
+		        // Appel de la méthode de suppression
+		        bibliothèque.deleteLivre(idLivreASupprimer);
+
+		        System.out.println("Suppression du livre avec l'ID " + idLivreASupprimer + " effectuée.");
+		   
+		    	
+		    	
 		    }
+//		    	Connection con=Connect.getConnection();
+//
+//	        LivreDao livreDao = new LivreDao();
+//	        
+//		        // Exécution de la méthode getTousLivres()
+//		        List<Livre> livres = livreDao.getTousLivres();
+//		        
+//		        // Vérification si des livres ont été récupérés
+//		        if (!livres.isEmpty()) {
+//		            // Affichage des livres récupérés
+//	            System.out.println("Livres récupérés depuis la base de données :");
+//		            for (Livre livre : livres) {
+//		                System.out.println(livre);
+//		            }
+//		        } else {
+//		            System.out.println("Aucun livre récupéré depuis la base de données.");
+//		    }
+//
+//		    }
 }
+}
+
+
+
 //
 //LivreDao livreDao = new LivreDao();
 //
@@ -50,7 +69,6 @@ public class Test {
 //}
 //	
 //}
-	
-// Identifiant du livre à supprimer (changez-le selon vos besoins)
+*/	
 
-
+}}
