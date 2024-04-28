@@ -6,7 +6,8 @@ public class Test {
 
 	public static void main(String[] args) {
 		
-Connection con=Connect.getConnection();
+Connection con= Connect.getConnection();
+
 	}
 
 }

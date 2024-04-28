@@ -1,55 +1,82 @@
 package biblio.metier;
 
-
 public class Membre {
-   private int id_memeber;
-   private String First_name;
-   private String Last_name;
-   private int Num_tele;
-   private String email;
+    private int idMembre;
+    private String nom;
+    private String prenom;
+    private String address;
+    private String telephone;
+    private String email;
 
+    // Constructors
+    public Membre() {}
 
-   public Membre(int id_memeber, String first_name, String last_name, int num_tele, String email) {
-	super();
-	First_name = first_name;
-	Last_name = last_name;
-	Num_tele = num_tele;
-	this.email = email;
-	}
+    public Membre(String nom, String prenom, String address, String telephone, String email) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.address = address;
+        this.telephone = telephone;
+        this.email = email;
+    }
 
-	public String getFirst_name() {
-	return First_name;
-	}
+    // Getters and setters
+    public int getIdMembre() {
+        return idMembre;
+    }
 
-	public void setFirst_name(String first_name) {
-	First_name = first_name;
-	}
+    public void setIdMembre(int idMembre) {
+        this.idMembre = idMembre;
+    }
 
-	public String getLast_name() {
-	return Last_name;
-	}
+    public String getNom() {
+        return nom;
+    }
 
-	public void setLast_name(String last_name) {
-	Last_name = last_name;
-	}
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 
-	public int getNum_tele() {
-	return Num_tele;
-	}
+    public String getPrenom() {
+        return prenom;
+    }
 
-	public void setNum_tele(int num_tele) {
-	Num_tele = num_tele;
-	}
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
 
-	public String getEmail() {
-	return email;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public void setEmail(String email) {
-	this.email = email;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Membre{" +
+                "idMembre=" + idMembre +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", address='" + address + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
-
-
-
